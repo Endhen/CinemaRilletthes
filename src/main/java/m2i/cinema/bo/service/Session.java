@@ -13,14 +13,14 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 import m2i.cinema.bo.cinema.Room;
 
 @Data @Entity
 @AllArgsConstructor
-@Table(name="session")
+@Table(name="sessions")
 @EqualsAndHashCode(callSuper=false)
-public class Session extends GenericBean {
+public class Session extends GenericEntity {
 
 	@ManyToOne(
 			cascade = CascadeType.ALL, 

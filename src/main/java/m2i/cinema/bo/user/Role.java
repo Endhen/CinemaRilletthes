@@ -7,13 +7,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
 @Data @Entity
 @Table(name="role")
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class Role extends GenericBean {
+public class Role extends GenericEntity {
 
 	@Column(name = "role_name")
 	private String name;

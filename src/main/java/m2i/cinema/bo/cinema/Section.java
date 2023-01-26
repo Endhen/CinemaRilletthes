@@ -13,13 +13,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
 @Data @Entity
 @AllArgsConstructor
 @Table(name="sections")
 @EqualsAndHashCode(callSuper=false)
-public class Section extends GenericBean {
+public class Section extends GenericEntity {
 
 	@Column(name = "group_name")
 	private String name;
@@ -41,11 +41,11 @@ public class Section extends GenericBean {
 	
 	@OneToMany(
 			cascade = CascadeType.ALL, 
-			fetch = FetchType.LAZY, // EAGER
+			fetch = FetchType.EAGER,
 			orphanRemoval = true)
 	private List<Seat> seats;
 	
-	@ManyToOne(
+	@ManyToOne( // Bidirectionnal
 			cascade = CascadeType.ALL,
 			fetch = FetchType.LAZY, 
 			optional = false)

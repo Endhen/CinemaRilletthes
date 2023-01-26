@@ -1,5 +1,6 @@
 package m2i.cinema.bo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,13 +12,15 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 @Data @Entity
-@Accessors(chain = true)
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class GenericBean {
+@Accessors(chain = false)
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class GenericEntity {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, nullable = false)
     private int id;
+    
 }
 
 

@@ -8,11 +8,37 @@ spring:
         hibernate: 
             ddl-auto: create-drop
         show-sql: true
-        # properties:
-        #     hibernate:
-        #         dialect: org.hibernate.dialect.MySQL8Dialect
-
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+                format_sql: true
     mvc:
         view:
             prefix: /resources/templates/
             suffix: .jsp
+
+logging:
+    level:
+        org:
+        hibernate:
+            SQL: DEBUG
+            type:
+                descriptor:
+                    sql:
+                    BasicBinder: TRACE
+    # config: log4j.properties
+    file:
+        name: D:/Projets/Dev/M2i/CinemaRietthes/cinema/log/app.log
+
+# log4j:
+#     rootLogger: INFO,ConsoleAppender,FileAppender
+#     appender:   
+#         ConsoleAppender: org.apache.log4j.ConsoleAppender
+#         layout: org.apache.log4j.PatternLayout
+#             ConversionPattern: %-7p %d [%t] %c [%X{userName}] [%X{accessToken}] - %m%n
+
+#         FileAppender: org.apache.log4j.RollingFileAppender
+#             File: E:/Apps_Tek/apps-webservices-log/apps-webservices.log
+#             layout: org.apache.log4j.PatternLayout
+#                 ConversionPattern: %-7p %d [%t] %c [%X{userName}] [%X{accessToken}] - %m%n
+

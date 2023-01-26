@@ -10,36 +10,41 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 import m2i.cinema.bo.location.Address;
 
 @Data @Entity
 @AllArgsConstructor
 @Table(name="cinemas")
-@EqualsAndHashCode(callSuper=false)
-public class Cinema extends GenericBean {
+@EqualsAndHashCode(callSuper=true)
+public class Cinema extends GenericEntity {
 	
 	@Column(name = "cinema_name")
 	private String name;
 
 	@OneToOne(
 			cascade = CascadeType.ALL, 
-			fetch = FetchType.LAZY, // EAGER
+			fetch = FetchType.EAGER,
 			optional = false)
 	private Address address;
 	
 	// @OneToOne(
 	// 		cascade = CascadeType.ALL, 
-	// 		fetch = FetchType.LAZY, 
+	// 		fetch = FetchType.EAGER, 
 	// 		optional = false)
 	// private SuperUser manager; 
 
-	@OneToMany(
+	@OneToMany( // Rooms are excusive
 			cascade = CascadeType.ALL, 
-			fetch = FetchType.LAZY)
+			fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SELECT) // OR SUBSELECT
+	// @LazyCollection(LazyCollectionOption.FALSE) without "fetch = FetchType.EAGER"
 	private List<Room> rooms;
 	
 	public Cinema() {}

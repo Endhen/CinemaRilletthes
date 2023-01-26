@@ -18,7 +18,7 @@ import m2i.cinema.bo.location.Address;
 import m2i.cinema.bo.service.Reservation;
 
 @Data @Entity
-@Table(name="client")
+@Table(name="clients")
 @EqualsAndHashCode(callSuper=false)
 public class Client extends User {
 
@@ -38,21 +38,20 @@ public class Client extends User {
 			fetch = FetchType.LAZY)
 	private List<Reservation> reservations = null;
 
-	public Client(
-			String firstName, 
-			String lastName, 
-			String email, 
-			String password, 
-			Address address, 
-			LocalDate birthday,
-			LocalDateTime creationDate, 
-			List<Reservation> reservations) {
-		super(firstName, lastName, email, password);
-		this.address = address;
-		this.birthday = birthday;
-		this.creationDate = creationDate;
-		this.reservations = reservations;
-	}
-
+	// public Client(
+	// 		String firstName, 
+	// 		String lastName, 
+	// 		String email, 
+	// 		String password, 
+	// 		Address address, 
+	// 		LocalDate birthday,
+	// 		LocalDateTime creationDate, 
+	// 		List<Reservation> reservations) {
+	// 	super(firstName, lastName, email, password);
+	// 	this.address = address;
+	// 	this.birthday = birthday;
+	// 	this.creationDate = creationDate;
+	// 	this.reservations = reservations;
+	// }
 
 }

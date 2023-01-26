@@ -12,13 +12,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
 @Data @Entity
 @AllArgsConstructor
 @Table(name="rooms")
 @EqualsAndHashCode(callSuper=false)
-public class Room extends GenericBean {
+public class Room extends GenericEntity {
 
 	@Column(name = "room_name")
 	private String name;
@@ -29,9 +29,9 @@ public class Room extends GenericBean {
 	@Column(name = "experience_4dx")
 	private boolean experience4DX;
 
-	@OneToMany(
+	@OneToMany( // Bidirectionnal
 			cascade = CascadeType.ALL, 
-			fetch = FetchType.LAZY, // EAGER
+			fetch = FetchType.EAGER, 
 			orphanRemoval = true)
 	private List<Section> sections;
 

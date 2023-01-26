@@ -6,11 +6,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 import m2i.cinema.dal.DAO;
 
 @Service
-public class BLL<T extends GenericBean> {
+public class BLL<T extends GenericEntity> {
     
     @Autowired
     private DAO<T> repository;

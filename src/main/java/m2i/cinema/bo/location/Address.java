@@ -10,18 +10,18 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
 @Data @Entity
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 @Table(name="addresses")
-public class Address extends GenericBean {
+public class Address extends GenericEntity {
 
 	@Column(name="street_number")
 	private int number;
 
-	@ManyToOne(
+	@ManyToOne( // Not exclusive
 			cascade = CascadeType.ALL, 
 			optional = false, 
 			fetch = FetchType.LAZY) // EAGER

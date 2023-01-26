@@ -10,13 +10,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
 @Data @Entity
 @AllArgsConstructor
 @Table(name="seats")
 @EqualsAndHashCode(callSuper=false)
-public class Seat extends GenericBean {
+public class Seat extends GenericEntity {
 
 	@Column(name = "col_placement")
 	private int columnPlacement;

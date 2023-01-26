@@ -7,13 +7,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
 @Data @Entity
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-@Table(name="street_type")
-public class StreetType extends GenericBean {
+@Table(name="street_types")
+public class StreetType extends GenericEntity {
 
 	@Column(name = "type_name")
 	private String name;

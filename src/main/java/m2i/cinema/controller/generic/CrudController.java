@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
 import m2i.cinema.bll.BLL;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
-public abstract class CrudController<T extends GenericBean> implements CrudRouting<T> {
+public abstract class CrudController<T extends GenericEntity> implements CrudRouting<T> {
     
     @Autowired
     public BLL<T> bll;
@@ -19,13 +19,13 @@ public abstract class CrudController<T extends GenericBean> implements CrudRouti
     }
     
     public ResponseEntity<T> findById(int id){
-        Optional<T> entity = bll.findById(id);
-        
-        if(entity.isPresent()) { 
+        Optional<T> entity = bll.findById(id);        
+
+        if(entity.isPresent())
             return ResponseEntity.ok(entity.get());
-        } else {
+        else
             return ResponseEntity.notFound().build();
-        }
+
     }
     
     public ResponseEntity<T> update(int id, T updated){

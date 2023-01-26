@@ -10,16 +10,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericBean;
+import m2i.cinema.bo.GenericEntity;
 
 @Data @Entity
 @AllArgsConstructor
 @Table(name="movies")
 @EqualsAndHashCode(callSuper=false)
-public class Movie extends GenericBean {
+public class Movie extends GenericEntity {
 
 	private String name;
 	
@@ -27,9 +30,10 @@ public class Movie extends GenericBean {
 
 	private float price;
 
-	@OneToMany(
+	@OneToMany( // Not exclusive
 			cascade = CascadeType.ALL, 
-			fetch = FetchType.LAZY) // EAGER
+			fetch = FetchType.EAGER) // EAGER
+	@Fetch(FetchMode.SELECT)
 	private List<Genre> genres;
 
 	private String synopsis;
@@ -39,9 +43,9 @@ public class Movie extends GenericBean {
 	@Column(name = "experience_3d")
 	private boolean experience3D;
 
-	@ManyToOne(
+	@ManyToOne( // Not exclusive
 			cascade = CascadeType.ALL, 
-			fetch = FetchType.LAZY, 
+			fetch = FetchType.EAGER, 
 			optional = false)
 	private LanguageVersion languageVersion;
 	
