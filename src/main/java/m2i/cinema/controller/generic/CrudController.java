@@ -39,7 +39,9 @@ public abstract class CrudController<T extends GenericEntity> implements CrudRou
     }
     
     public ResponseEntity<String> delete(int id){
-        bll.delete(id);
-        return ResponseEntity.ok("Deleted");
+        bll.delete(
+            bll.findById(id).get());
+
+        return ResponseEntity.ok("DELETED");
     }
 }

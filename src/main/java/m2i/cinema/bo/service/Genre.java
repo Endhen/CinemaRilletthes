@@ -16,7 +16,7 @@ import m2i.cinema.bo.GenericEntity;
 @EqualsAndHashCode(callSuper=false)
 public class Genre extends GenericEntity {
 
-	@Column(name = "genre_name")
+	@Column(name = "genre_name", unique = true)
 	private String name;
 	
 	public Genre() {}

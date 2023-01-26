@@ -23,15 +23,15 @@ public class BLL<T extends GenericEntity> {
         return repository.findById(id);
     }
     
-    public T update(T updated){
-        return repository.save(updated);
+    public T update(T entity){
+        return repository.save(entity);
     }
     
-    public T create(T newDomain){
-        return repository.save(newDomain);
+    public T create(T entity){
+        return repository.save(entity);
     }
     
-    public void delete(int id){
-        repository.deleteById(id);
+    public void delete(T entity){
+        repository.delete(entity);
     }
 }

@@ -15,7 +15,7 @@ import m2i.cinema.bo.GenericEntity;
 @EqualsAndHashCode(callSuper=false)
 public class LanguageVersion extends GenericEntity {
 
-	@Column(name = "language_version_type")
+	@Column(name = "language_version_type", unique = true)
 	private String type;
 	
 	public LanguageVersion() {}
