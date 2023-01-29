@@ -1,4 +1,4 @@
-package m2i.cinema.bo.service;
+package m2i.cinema.entity.service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,8 +13,8 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericEntity;
-import m2i.cinema.bo.cinema.Room;
+import m2i.cinema.entity.GenericEntity;
+import m2i.cinema.entity.cinema.Room;
 
 @Data @Entity
 @AllArgsConstructor

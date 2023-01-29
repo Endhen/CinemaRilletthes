@@ -1,4 +1,4 @@
-package m2i.cinema.bo.user;
+package m2i.cinema.entity.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericEntity;
+import m2i.cinema.entity.GenericEntity;
 
 @Data @Entity
 @Table(name="role")

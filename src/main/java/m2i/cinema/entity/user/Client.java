@@ -1,4 +1,4 @@
-package m2i.cinema.bo.user;
+package m2i.cinema.entity.user;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,8 +14,8 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.location.Address;
-import m2i.cinema.bo.service.Reservation;
+import m2i.cinema.entity.location.Address;
+import m2i.cinema.entity.service.Reservation;
 
 @Data @Entity
 @Table(name="clients")

@@ -1,4 +1,4 @@
-package m2i.cinema.bo.cinema;
+package m2i.cinema.entity.cinema;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import org.hibernate.annotations.FetchMode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.GenericEntity;
-import m2i.cinema.bo.location.Address;
+import m2i.cinema.entity.GenericEntity;
+import m2i.cinema.entity.location.Address;
 
 @Data @Entity
 @AllArgsConstructor

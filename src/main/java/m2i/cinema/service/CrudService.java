@@ -1,4 +1,4 @@
-package m2i.cinema.bll;
+package m2i.cinema.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,14 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import m2i.cinema.bo.GenericEntity;
-import m2i.cinema.dal.DAO;
+import m2i.cinema.entity.GenericEntity;
+import m2i.cinema.repository.CrudRepository;
 
 @Service
-public class BLL<T extends GenericEntity> {
+public class CrudService<T extends GenericEntity> {
     
     @Autowired
-    private DAO<T> repository;
+    private CrudRepository<T> repository;
     
     public List<T> findAll(){
         return repository.findAll();

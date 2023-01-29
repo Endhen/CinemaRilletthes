@@ -1,4 +1,4 @@
-package m2i.cinema.bo;
+package m2i.cinema.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package m2i.cinema.bo.user;
+package m2i.cinema.entity.user;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import m2i.cinema.bo.cinema.Cinema;
+import m2i.cinema.entity.cinema.Cinema;
 
 @Data @Entity
 @Table(name="super_users")

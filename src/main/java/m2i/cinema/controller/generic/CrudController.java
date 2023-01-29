@@ -6,13 +6,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
-import m2i.cinema.bll.BLL;
-import m2i.cinema.bo.GenericEntity;
+import m2i.cinema.entity.GenericEntity;
+import m2i.cinema.service.CrudService;
 
 public abstract class CrudController<T extends GenericEntity> implements CrudRouting<T> {
     
     @Autowired
-    public BLL<T> bll;
+    public CrudService<T> bll;
     
     public ResponseEntity<List<T>> findAll(){
         return ResponseEntity.ok(bll.findAll());
